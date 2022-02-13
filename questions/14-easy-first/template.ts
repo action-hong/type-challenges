@@ -1,3 +1,3 @@
 type First<T extends any[]> =
-  T extends [first: infer F, ...rest: any]
+  T extends [infer F, ...infer Rest]
     ? F : never

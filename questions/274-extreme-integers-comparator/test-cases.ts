@@ -170,5 +170,4 @@ type cases = [
   Expect<Equal<Comparator<-36, 36>, Comparison.Lower>>,
   Expect<Equal<Comparator<27, 27>, Comparison.Equal>>,
   Expect<Equal<Comparator<-38, -38>, Comparison.Equal>>,
-  // Expect<Equal<Comparator<9, 10>, Comparison.Lower>>,
 ]
