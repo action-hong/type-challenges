@@ -98,3 +98,7 @@ type Sum<left extends string | number | bigint, right extends string | number | 
   SumStrings<CoalesceToString<left>, CoalesceToString<right>>
 
 type test473 = SumStrings<'', '8', '77', true>
+
+type CheckNever<T> = [T] extends [never] ? true : false
+
+type c1 = CheckNever<never>
