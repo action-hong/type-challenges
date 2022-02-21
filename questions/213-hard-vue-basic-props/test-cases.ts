@@ -2,6 +2,7 @@ import { Equal, Expect, IsAny, Debug } from '@type-challenges/utils'
 
 class ClassA {}
 
+
 VueBasicProps({
   props: {
     propA: {},
@@ -13,6 +14,7 @@ VueBasicProps({
   },
   data(this) {
     type PropsType = Debug<typeof this>
+    type pa = PropsType['propB']
     type cases = [
       Expect<IsAny<PropsType['propA']>>,
       Expect<Equal<PropsType['propB'], string>>,
@@ -28,7 +30,7 @@ VueBasicProps({
     this.getRandom()
     // @ts-expect-error
     this.data()
-  
+
     return {
       firstname: 'Type',
       lastname: 'Challenges',

@@ -1,5 +1,6 @@
-type PopString<S extends string> = S extends `${any}${infer Rest}` ? Rest : ''
+type StringToArray<S extends string, R extends string[] = []>
+  = S extends `${infer F}${infer Rest}`
+    ? StringToArray<Rest, [F, ...R]>
+    : R
 
-type LengthOfString1<S extends string, T extends any[] = []> =
-  S extends '' ? T['length']
-    : LengthOfString1<PopString<S>, [...T, 0]>
+type LengthOfString<S extends string> = StringToArray<S>['length']
